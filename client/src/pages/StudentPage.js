@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://intervue-live-polling-system-qev6.onrender.com");
 
 function StudentPage() {
     const [poll, setPoll] = useState(null);
