@@ -154,16 +154,14 @@ intervue-live-polling-system/
 └── screenshots/   # README images
 ```
 
-👤 Author
+## 👤 Author
 
-- Ravi Kumar Chinta
+**Ravi Kumar Chinta**  
 
-📧 Email: ravikumar.chinta@sasi.ac.in
+📧 **Email:** ravikumar.chinta@sasi.ac.in  
+🔗 **GitHub:** https://github.com/ravi-kumar-chinta  
+🔗 **LinkedIn:** https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280/
 
-🔗 GitHub: https://github.com/ravi-kumar-chinta
-
-🔗 LinkedIn: https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280
----
 
 ## ⭐ Support & Feedback
 
