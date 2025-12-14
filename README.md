@@ -36,7 +36,7 @@ The UI closely follows the **provided Figma design**.
 ### Frontend
 - ⚛️ React.js
 - 🔌 Socket.io Client
-- 🎨 CSS (Figma-inspired UI)
+- 🎨 CSS
 
 ### Backend
 - 🟢 Node.js
