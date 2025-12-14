@@ -83,14 +83,14 @@ _Select role: Teacher or Student_
 ### 👨‍🏫 Teacher – Create Poll
 _Teacher creates a question and options_
 
-![Teacher Create Poll](screenshots/teacher-create.png)
+![Teacher Create Poll](screenshots/teacher-panel.png)
 
 ---
 
 ### 👨‍🎓 Student – Answer Poll
 _Student submits an answer_
 
-![Student Poll](screenshots/student-poll.png)
+![Student Poll](screenshots/student-panel.png)
 
 ---
 
@@ -130,40 +130,39 @@ node index.js
 ```
 Backend runs at:
 
-http://localhost:5000
+`http://localhost:5000`
 
-3️⃣ Frontend Setup
+### 3️⃣ Frontend Setup
+
+```bash
 cd client
 npm install
 npm start
-
+```
 
 Frontend runs at:
 
-http://localhost:3000
+`http://localhost:3000`
 
-📂 Project Structure
+
+### 📂 Project Structure
+
+```bash
 intervue-live-polling-system/
 ├── client/        # React frontend
 ├── server/        # Node.js backend
 └── screenshots/   # README images
-
-📄 Assignment Details
-
-Assignment: SDE Intern – Live Polling System
-
-UI Reference: Provided Figma Design
-
-Submission Mode: Deployed Link + GitHub Repository
+```
 
 👤 Author
 
-Ravi Kumar Chinta
+- Ravi Kumar Chinta
+
 📧 Email: ravikumar.chinta@sasi.ac.in
 
 🔗 GitHub: https://github.com/ravi-kumar-chinta
 
-🔗 LinkedIn: (add your LinkedIn URL here)
+🔗 LinkedIn: https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280
 ---
 
 ## ⭐ Support & Feedback
