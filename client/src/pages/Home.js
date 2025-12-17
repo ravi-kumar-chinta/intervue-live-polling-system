@@ -9,20 +9,14 @@ function Home() {
     if (role === "student") navigate("/student");
     if (role === "teacher") navigate("/teacher");
   };
-return (
-  <div
-  className="page"
-  style={{
-    minHeight: "100vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  }}
->
 
-    <div className="card" style={{ textAlign: "center" }}>
-      <h2>Welcome to Intervue Poll</h2>
-      <p>Please select how you want to continue</p>
+return (
+  <div className="home-container">
+    <div className="home-card">
+      <h2 className="home-title">Welcome to Live Poll</h2>
+      <p className="home-subtitle">
+        Choose how you want to continue
+      </p>
 
       <div className="role-container">
         <div

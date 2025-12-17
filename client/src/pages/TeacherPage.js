@@ -7,39 +7,83 @@ function TeacherPage() {
   const [question, setQuestion] = useState("");
   const [options, setOptions] = useState("");
   const [results, setResults] = useState({});
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [pollEnded, setPollEnded] = useState(true);
 
   useEffect(() => {
     socket.on("pollResults", (data) => {
       setResults(data);
     });
 
+    socket.on("pollEnded", () => {
+      setPollEnded(true);
+      setTimeLeft(0);
+    });
+
     return () => {
       socket.off("pollResults");
+      socket.off("pollEnded");
     };
   }, []);
 
   const createPoll = () => {
-    if (!question || !options) {
-      alert("Enter question and options");
+    const optionList = options
+      .split(",")
+      .map((opt) => opt.trim())
+      .filter(Boolean);
+
+    if (!question.trim() || optionList.length < 2) {
+      alert("Enter a question and at least 2 options");
       return;
     }
 
+    const endTime = Date.now() + 60000;
+
     socket.emit("createPoll", {
-      question,
-      options: options.split(","),
+      question: question.trim(),
+      options: optionList,
+      endTime,
     });
 
     setResults({});
+    setPollEnded(false);
+    setTimeLeft(60);
+
+    const interval = setInterval(() => {
+      const remaining = Math.max(
+        Math.floor((endTime - Date.now()) / 1000),
+        0
+      );
+
+      setTimeLeft(remaining);
+
+      if (remaining === 0) {
+        clearInterval(interval);
+        setPollEnded(true);
+      }
+    }, 1000);
   };
 
-  return (
-    <div className="page">
-      <div className="card">
-        <h2>Let’s Get Started</h2>
-        <p>Create a poll, ask questions, and monitor live responses.</p>
+  const totalResponses = Object.values(results).reduce(
+    (a, b) => a + b,
+    0
+  );
 
-        {/* Question */}
-        <div className="field">
+  return (
+    <div className="page-container">
+      <div className="page-card">
+        <h2 className="page-title">Teacher Dashboard</h2>
+        <p className="page-subtitle">
+          Create polls and view live student responses.
+        </p>
+
+        {/* TIMER */}
+        {timeLeft > 0 && (
+          <p className="muted-text">⏳ Poll ends in {timeLeft}s</p>
+        )}
+
+        {/* QUESTION */}
+        <div className="form-group">
           <label>Enter your question</label>
           <input
             type="text"
@@ -49,49 +93,54 @@ function TeacherPage() {
           />
         </div>
 
-        {/* Timer */}
-        <div className="field">
-          <label>Time limit</label>
-          <input type="text" value="60 seconds" disabled />
-        </div>
-
-        {/* Options */}
-        <div className="field">
+        {/* OPTIONS */}
+        <div className="form-group">
           <label>Edit options</label>
           <input
             type="text"
-            placeholder="Option 1, Option 2, Option 3"
+            placeholder="Option1, Option2, Option3"
             value={options}
             onChange={(e) => setOptions(e.target.value)}
           />
         </div>
 
-        <button className="primary-btn" onClick={createPoll}>
-          Ask Question
+        {/* BUTTON */}
+        <button
+          className="primary-btn"
+          onClick={createPoll}
+          disabled={!pollEnded}
+        >
+          {pollEnded ? "Create New Poll" : "Poll Running..."}
         </button>
-      </div>
-    <hr style={{ margin: "30px 0", borderColor: "#E5E7EB" }} />
-      {/* Results */}
-      <div className="card" style={{ marginTop: "25px" }}>
-        <h3>Live Results</h3>
+
+        <hr className="divider" />
+
+        <h3 className="section-title">Live Results</h3>
+
+        <p className="muted-text">
+          Total responses: {totalResponses}
+        </p>
 
         {Object.keys(results).length === 0 && (
-          <p>No responses yet</p>
+          <p className="muted-text">No responses yet</p>
         )}
 
         {Object.entries(results).map(([opt, count]) => {
-          const total =
-            Object.values(results).reduce((a, b) => a + b, 0) || 1;
-          const percent = Math.round((count / total) * 100);
+          const percent =
+            totalResponses === 0
+              ? 0
+              : Math.round((count / totalResponses) * 100);
 
           return (
             <div key={opt} className="result-item">
               <div className="result-header">
                 <span>{opt}</span>
-                <span>{percent}%</span>
+                <span>
+                  {percent}% ({count})
+                </span>
               </div>
 
-              <div className="progress-bg">
+              <div className="progress-bar">
                 <div
                   className="progress-fill"
                   style={{ width: `${percent}%` }}
