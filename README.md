@@ -122,13 +122,14 @@ _Real-time poll results with progress bars_
 ```bash
 git clone https://github.com/ravi-kumar-chinta/intervue-live-polling-system.git
 cd intervue-live-polling-system
+
 ```
 ### 2️⃣ Backend Setup
 ```bash
 cd server
 npm install
 node index.js
-
+```
 
 Backend runs at:
 `http://localhost:5000`
@@ -145,10 +146,12 @@ Frontend runs at:
 `http://localhost:3000`
 
 ### 📂 Project Structure
+```bash
 intervue-live-polling-system/
 ├── client/        # React frontend
 ├── server/        # Node.js backend
 └── screenshots/   # README images
+```
 
 ## 👤 Author
 
