@@ -137,8 +137,8 @@ _Real-time poll results with progress bars_
 ```bash
 git clone https://github.com/ravi-kumar-chinta/intervue-live-polling-system.git
 cd intervue-live-polling-system
-
 ```
+
 ### 2️⃣ Backend Setup
 ```bash
 cd server
