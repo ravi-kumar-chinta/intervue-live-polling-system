@@ -115,7 +115,7 @@ _Poll automatically ends after timer_
 ### 📊 Live Results
 _Real-time poll results with progress bars_
 
-![Live Results](screenshots/live-results.png)
+![Live Results](screenshots/results-page.png)
 
 ---
 
