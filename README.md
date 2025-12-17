@@ -3,13 +3,13 @@
 ![React](https://img.shields.io/badge/Frontend-React-blue)
 ![Node](https://img.shields.io/badge/Backend-Node.js-green)
 ![Socket.io](https://img.shields.io/badge/Realtime-Socket.io-black)
-![Vercel](https://img.shields.io/badge/Deployed-Vercel-brightgreen)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-brightgreen)
 ![Render](https://img.shields.io/badge/Backend-Render-purple)
 
 A **real-time live polling system** built as part of the  
-**Intervue SDE Intern Assignment**.
+**Intervue – SDE Intern Technical Assignment**.
 
-This application enables **teachers** to create polls and **students** to submit answers in real time, with **live result visualization**.
+This application allows **teachers** to create polls and **students** to submit answers in real time, with **live result visualization** using WebSockets.
 
 ---
 
@@ -27,7 +27,7 @@ Design and implement a real-time polling system where:
 - Students can respond instantly
 - Results update live for all users
 
-The UI closely follows the **provided Figma design**.
+The UI closely follows the **provided Figma design** and focuses on clean UX and responsiveness.
 
 ---
 
@@ -36,7 +36,7 @@ The UI closely follows the **provided Figma design**.
 ### Frontend
 - ⚛️ React.js
 - 🔌 Socket.io Client
-- 🎨 CSS
+- 🎨 CSS (Responsive UI)
 
 ### Backend
 - 🟢 Node.js
@@ -54,20 +54,24 @@ The UI closely follows the **provided Figma design**.
 
 ### 👨‍🏫 Teacher Panel
 - Create polls with a question and multiple options
-- View live poll results
+- View live poll results in real time
 - Automatic poll timeout (60 seconds)
-- Real-time progress bar updates
+- Live progress bar updates
+- Create a new poll once the previous poll ends
 
 ### 👨‍🎓 Student Panel
 - Join and view live polls instantly
 - Submit only **one answer per poll**
-- Disabled options after submission
-- Waiting screen for next poll
+- Selected option is visually highlighted
+- Options are disabled after submission
+- Timer and poll status remain visible until poll ends
+- Waiting screen for the next poll
 
 ### 🔴 Real-Time Capabilities
-- Instant synchronization using WebSockets
+- Instant synchronization using WebSockets (Socket.io)
 - No page refresh required
 - Handles multiple concurrent users
+- Server-driven timer ensures perfect sync across users
 
 ---
 
@@ -105,10 +109,10 @@ _Real-time poll results with progress bars_
 
 1. User selects role (Teacher / Student)
 2. Teacher creates a poll
-3. Students receive poll instantly
-4. Students submit answers
-5. Teacher sees live results
-6. Poll ends automatically after timeout
+3. Students receive the poll instantly
+4. Students submit their answers
+5. Teacher sees live results updating in real time
+6. Poll ends automatically after the timeout
 
 ---
 
@@ -119,17 +123,14 @@ _Real-time poll results with progress bars_
 git clone https://github.com/ravi-kumar-chinta/intervue-live-polling-system.git
 cd intervue-live-polling-system
 ```
-
-## ⚙️ Local Setup Instructions
-
 ### 2️⃣ Backend Setup
 ```bash
 cd server
 npm install
 node index.js
-```
-Backend runs at:
 
+
+Backend runs at:
 `http://localhost:5000`
 
 ### 3️⃣ Frontend Setup
@@ -141,30 +142,26 @@ npm start
 ```
 
 Frontend runs at:
-
 `http://localhost:3000`
 
-
 ### 📂 Project Structure
-
-```bash
 intervue-live-polling-system/
 ├── client/        # React frontend
 ├── server/        # Node.js backend
 └── screenshots/   # README images
-```
 
 ## 👤 Author
 
-**Ravi Kumar Chinta**  
+Ravi Kumar Chinta
 
-📧 **Email:** ravikumar.chinta@sasi.ac.in  
-🔗 **GitHub:** https://github.com/ravi-kumar-chinta  
-🔗 **LinkedIn:** https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280/
+📧 Email: chintharavikumar9908@gmail.com
 
+🔗 GitHub: https://github.com/ravi-kumar-chinta
 
-## ⭐ Support & Feedback
+🔗 LinkedIn: https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280/
 
-If you find this project helpful or interesting, feel free to ⭐ **star this repository**.
+### ⭐ Support & Feedback
 
-Thank you for taking the time to review this project! 😊
+If you find this project helpful or interesting, please consider ⭐ starring this repository.
+
+`Thank you for taking the time to review this project! 😊`
