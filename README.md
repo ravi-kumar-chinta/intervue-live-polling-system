@@ -135,7 +135,7 @@ _Real-time poll results with progress bars_
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/chinta-ravi-kumar/intervue-live-polling-system.git
+git clone https://github.com/ravi-kumar-chinta/intervue-live-polling-system.git
 cd intervue-live-polling-system
 
 ```
