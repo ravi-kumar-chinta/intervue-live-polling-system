@@ -173,7 +173,7 @@ intervue-live-polling-system/
 Ravi Kumar Chinta
 
 📧 Email: chintharavikumar9908@gmail.com
-🔗 GitHub: https://github.com/ravi-kumar-chinta
+🔗 GitHub: https://github.com/chinta-ravi-kumar
 
 🔗 LinkedIn: https://www.linkedin.com/in/chinta-ravi-kumar-a0a763280/
 
