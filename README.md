@@ -80,21 +80,35 @@ The UI closely follows the **provided Figma design** and focuses on clean UX and
 ### 🏠 Welcome Screen
 _Select role: Teacher or Student_
 
-![Welcome Screen](screenshots/welcome.png)
+![Welcome Screen](screenshots/welcome-page.png)
 
 ---
 
 ### 👨‍🏫 Teacher – Create Poll
 _Teacher creates a question and options_
 
-![Teacher Create Poll](screenshots/teacher-panel.png)
+![Teacher Create Poll](screenshots/teacher-page.png)
 
 ---
 
 ### 👨‍🎓 Student – Answer Poll
 _Student submits an answer_
 
-![Student Poll](screenshots/student-panel.png)
+![Student Poll](screenshots/student-page.png)
+
+---
+
+### ✅ Student – After Submission
+_Answer submitted and options disabled_
+
+![Student Submitted](screenshots/student-after-submitted.png)
+
+---
+
+### ⏱️ Poll Ended
+_Poll automatically ends after timer_
+
+![Poll Ended](screenshots/poll-ended.png)
 
 ---
 
@@ -104,6 +118,7 @@ _Real-time poll results with progress bars_
 ![Live Results](screenshots/live-results.png)
 
 ---
+
 
 ## 🔄 Application Flow
 
