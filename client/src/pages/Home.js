@@ -24,7 +24,7 @@ return (
           onClick={() => setRole("student")}
         >
           <h4>I’m a Student</h4>
-          <p>Submit answers and view live results</p>
+          <p>Submit answers</p>
         </div>
 
         <div
